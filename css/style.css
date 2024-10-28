@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --bg-color-dark: #080808;
+  --second-bg-color-dark: #101010;
+  --third-bg-color-dark: rgba(0,0,0,0.3);
+  --text-color-dark: white;
+  --main-color-dark: #ea580c;
+
+  --bg-color-light: #ffffff;
+  --second-bg-color-light: #dedede;
+  --third-bg-color-light: rgba(255, 255, 255, 0.3);
+  --text-color-light: rgb(0, 0, 0);
+  --main-color-light: #0ca7ea;
+}
+
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+body{
+  background: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+body.light-theme{
+  background: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+.header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 15%;
+  background: var(--third-bg-color);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+}
