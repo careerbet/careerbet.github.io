@@ -24,6 +24,7 @@ html {
   font-size: 60%;
   overflow-x: hidden;
 }
+
 body{
   background: var(--bg-color-dark);
   color: var(--text-color-dark);
@@ -31,7 +32,9 @@ body{
 body.light-theme{
   background: var(--bg-color-light);
   color: var(--text-color-light);
+  --text-color: var(--text-color-light);
 }
+
 .header{
   position: fixed;
   width: 100%;
@@ -42,4 +45,82 @@ body.light-theme{
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  font-size: 3rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.logo:hover{
+  transform: scale(1.1);
+}
+
+span{
+  background: linear-gradient(
+    270deg,
+    #df8908 10%,
+    #ff1d15 100%
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text; /* Для поддержки WebKit браузеров */
+}
+body.light-theme span {
+  background: linear-gradient(
+    270deg,
+    #0857df 10%,
+    #8a15ff 100%
+  );
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text; /* Для поддержки WebKit браузеров */
+}
+
+.navbar a{
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 4rem;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+  border-bottom: 3px solid transparent;
+}
+.navbar a:hover{
+  color: var(--main-color-dark);
+  border-bottom: 3px solid var(--main-color-dark);
+}
+body.light-theme .navbar a:hover{
+  color: var(--main-color-light);
+  border-bottom: 3px solid var(--main-color-light);
+}
+
+.gradient-btn{
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  background: transparent; /* Убираем фон */
+  border: none; /* Убираем границу, если она есть */
+  cursor: pointer; /* Указываем, что это кнопка */
+  color: var(--text-color); /* Цвет текста, можно использовать переменную */
+  transition: 0.3s ease-in-out; /* Плавный переход для фона */
+}
+.gradient-btn:hover {
+  background: rgba(255, 255, 255, 0.1); /*Легкий фон при наведении */
+}
+
+.firstName {
+  margin-right: 0.5rem;
+}
+
+#menu-icon{
+  font-size: 3.5rem;
+  color: var(--text-color-dark);
+}
+#menu-icon.light-theme{
+  color: var(--text-color-light);
 }
