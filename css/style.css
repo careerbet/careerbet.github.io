@@ -12,12 +12,14 @@
   --third-bg-color-dark: rgba(0,0,0,0.3);
   --text-color-dark: white;
   --main-color-dark: #ea580c;
+  --gradient-color-dark: linear-gradient(270deg,#df8908 10%,#ff1d15 100%);
 
   --bg-color-light: #ffffff;
   --second-bg-color-light: #dedede;
   --third-bg-color-light: rgba(255, 255, 255, 0.3);
   --text-color-light: rgb(0, 0, 0);
   --main-color-light: #0ca7ea;
+  --gradient-color-light: linear-gradient(270deg,#0857df 10%,#8a15ff 100%);
 }
 
 html {
@@ -49,7 +51,7 @@ body.light-theme{
   z-index: 1000;
 }
 
-.logo {
+.logo{
   display: flex;
   font-size: 3rem;
   color: var(--text-color);
@@ -62,21 +64,13 @@ body.light-theme{
 }
 
 span{
-  background: linear-gradient(
-    270deg,
-    #df8908 10%,
-    #ff1d15 100%
-  );
+  background: var(--gradient-color-dark);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text; /* Для поддержки WebKit браузеров */
 }
 body.light-theme span {
-  background: linear-gradient(
-    270deg,
-    #0857df 10%,
-    #8a15ff 100%
-  );
+  background: var(--gradient-color-light);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text; /* Для поддержки WebKit браузеров */
@@ -86,7 +80,7 @@ body.light-theme span {
   font-size: 1.8rem;
   color: var(--text-color);
   margin-left: 4rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.3s ease-in-out;
   border-bottom: 3px solid transparent;
 }
@@ -112,6 +106,10 @@ body.light-theme .navbar a:hover{
 .gradient-btn:hover {
   background: rgba(255, 255, 255, 0.1); /*Легкий фон при наведении */
 }
+body.light-theme .gradient-btn:hover {
+  background: rgba(0, 0, 0, 0.1); /* Легкий светлый фон при наведении */
+}
+
 
 .firstName {
   margin-right: 0.5rem;
