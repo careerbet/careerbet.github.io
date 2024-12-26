@@ -849,8 +849,28 @@ body.light-theme .icon-eth:hover{
     text-align: center; /* Выровняйте текст для лучшего отображения */
   }
 
+  .slider {
+      display: flex; /* Используем флексбокс для расположения карточек */
+      flex-direction: row; /* Располагаем карточки в ряд */
+      overflow-x: auto; /* Горизонтальная прокрутка */
+      scroll-snap-type: x mandatory; /* Привязка к карточкам */
+  }
+  
   .item {
-    flex: 0 0 60%; /* Центральная карточка занимает 60% ширины */
+      position: relative; /* Убираем абсолютное позиционирование */
+      width: 80%; /* Уменьшаем ширину карточки для мобильных устройств */
+      margin: 0 10px; /* Добавляем отступы между карточками */
+      flex-shrink: 0; /* Запрещаем сжимать карточки */
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Плавные переходы */
+  }
+  
+  .item.active {
+      transform: scale(1.05); /* Увеличиваем активную карточку */
+  }
+  
+  .item:not(.active) {
+      filter: blur(2px); /* Уменьшаем эффект блюра для неактивных карточек */
+      opacity: 0.6; /* Уменьшаем непрозрачность для неактивных карточек */
   }
 }
 
@@ -867,9 +887,6 @@ body.light-theme .icon-eth:hover{
 
 /* Стили для каждой карточки */
 .item {
-  transition: transform 0.3s ease, width 0.3s ease;
-  scroll-snap-align: center; 
-  flex: 0 0 80%;
   position: absolute;
   width: 350px; /* Увеличиваем ширину карточки */
   height: 450px; /* Высота карточки */
@@ -885,9 +902,10 @@ body.light-theme .icon-eth:hover{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 10px 10px 0; /* Отступы по бокам */
   z-index: 0; /* Все карточки по умолчанию будут на одном уровне */
   border: 1px solid rgba(100,100,100,0.3);
+  margin: 0; /* Убираем отступы вокруг карточки */
+  padding: 0; /* Убираем внутренние отступы */
 }
 
 body.light-theme .item {

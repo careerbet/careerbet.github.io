@@ -231,7 +231,6 @@ items.forEach((item, index) => {
 
 
 
-
 function generateBoxShadow(n) {
   let boxShadow = "";
   for (let i = 0; i < n; i++) {
