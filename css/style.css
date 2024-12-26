@@ -979,7 +979,7 @@ body.light-theme .project-info h3 {
 .project-info p {
   font-size: 0.9em;
   color: var(--bg-color-light);
-  margin-bottom: 15px;
+  margin: 0 15px 15px; /* Добавляем отступы справа и слева */
 }
 body.light-theme .project-info p {
   color: var(--bg-color-dark);
