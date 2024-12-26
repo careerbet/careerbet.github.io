@@ -848,13 +848,17 @@ body.light-theme .icon-eth:hover{
     word-wrap: break-word;
     text-align: center; /* Выровняйте текст для лучшего отображения */
   }
+
+  .item {
+    flex: 0 0 60%; /* Центральная карточка занимает 60% ширины */
+  }
 }
 
 /* Стили для слайдера */
 .slider {
-  display: flex;
   overflow-x: auto; /* Горизонтальная прокрутка */
   scroll-snap-type: x mandatory; /* Привязка к карточкам */
+  display: flex;
   position: relative;
   width: 100%;
   height: 600px; /* Высота контейнера */
@@ -863,6 +867,9 @@ body.light-theme .icon-eth:hover{
 
 /* Стили для каждой карточки */
 .item {
+  transition: transform 0.3s ease, width 0.3s ease;
+  scroll-snap-align: center; 
+  flex: 0 0 80%;
   position: absolute;
   width: 350px; /* Увеличиваем ширину карточки */
   height: 450px; /* Высота карточки */
